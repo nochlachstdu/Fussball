@@ -1,0 +1,120 @@
+.human {
+    position: relative;  /* wichtig für absolute Positionierung der Arme/Beine */
+    width: 100px;
+    height: 200px;
+    margin: 50px auto;
+}
+
+/* Kopf */
+.head {
+    width: 50px;
+    height: 50px;
+    background: #f1c27d;
+    border-radius: 50%;
+    margin: 0 auto;
+    animation: upAndDown-head 0.5s infinite alternate;
+}
+
+@keyframes upAndDown-head {
+    0% {top: 0px;
+        position: relative}
+    100% {top: -20px;
+        position: relative;}
+}
+
+/* Körper */
+.body {
+    width: 40px;
+    height: 70px;
+    background: #3498db;
+    margin: 0 auto;
+    position: absolute;
+    top: 0px;
+    animation: upAndDown-body 0.5s infinite alternate;
+}
+
+@keyframes upAndDown-body {
+    0% {top: 0px;
+        position: relative}
+    100% {top: -20px;
+        position: relative;}
+}
+
+/* Arme */
+.left-arm, .right-arm {
+    width: 15px;
+    height: 60px;
+    background: #f1c27d;
+    position: absolute;
+    top: 50px;  /* unter dem Kopf */
+    border-radius: 8px 8px 4px 4px;
+    animation: upAndDown-arm 1s infinite alternate;
+}
+
+
+
+.left-arm {
+    left: 15px;
+    transform-origin: top;  /* Drehpunkt oben außen am Arm */
+    transform: rotate(20deg);
+    animation: swing-left 0.5s infinite alternate;
+}
+
+@keyframes swing-left {
+    0% { transform: rotate(20deg);
+        top: 50px;}
+    100% { transform: rotate(120deg);
+        top: 30px;}
+}
+
+.right-arm {
+    right: 15px;
+    transform-origin: top;  /* Drehpunkt oben außen am Arm */
+    transform: rotate(-20deg);
+    animation: swing-right 0.5s infinite alternate;
+}
+
+@keyframes swing-right {
+    0% { transform: rotate(-20deg);
+        top: 50px;}
+    100% { transform: rotate(-120deg);
+        top: 30px;}
+}
+
+/* Beine */
+.left-leg, .right-leg {
+    width: 15px;
+    height: 60px;
+    background: #2c3e50;
+    position: absolute;
+    top: 120px;
+    border-radius: 0px 0px 8px 8px;
+}
+
+.left-leg {
+    left: 30px;
+    transform-origin: top;
+    animation: swing-leg-left 0.5s infinite alternate;
+}
+
+@keyframes swing-leg-left {
+    0% { transform: rotate(0deg);
+        top: 120px;}
+    100% { transform: rotate(60deg);
+        top: 100px;}
+}
+
+.right-leg {
+    right: 30px;
+    transform-origin: top;
+    animation: swing-leg-right 0.5s infinite alternate;
+}
+
+@keyframes swing-leg-right {
+    0% { transform: rotate(0deg);
+        top: 120px;}
+    100% { transform: rotate(-60deg);
+        top: 100px;}
+}
+
+
